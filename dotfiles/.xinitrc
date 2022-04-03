@@ -1,1 +1,1 @@
-exec bash ~/.termdm/termdm
+exec $TERMDM_WM
