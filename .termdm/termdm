@@ -36,11 +36,10 @@ while [[ "$#" -gt 0 ]]; do
           exit 0
           ;;
         '')
+          read -p "WM/DE " TERMDM_WM
+          export TERMDM_WM=$TERMDM_WM
+          startx
           ;;
     esac
   shift
 done
-
-read -p "WM/DE " TERMDM_WM
-export TERMDM_WM=$TERMDM_WM
-startx
