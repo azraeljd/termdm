@@ -1,0 +1,46 @@
+# TermDM
+#
+# A display manager for X11 without a fancy GUI.
+#
+# Copyright (c) 2022 Azrael JD.
+#
+# This software is freely usable and distributable under
+# the terms of the Azratek Free and Open Source Software
+# License.
+#
+# Disclaimer:
+# THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY. IN NO EVENT SHALL
+# THE AUTHORS, CONTRIBUTORS, NOR THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+# DAMAGE CAUSED BY THE USE OF THIS SOFTWARE.
+
+#!/bin/bash
+
+TERMDM_VERSION="0.1"
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+          echo "TermDM"
+          echo "A display manager for X11 without a fancy GUI."
+          echo
+          echo "Usage:"
+          echo "termdm [options]"
+          echo
+          echo "Options:"
+          echo "-h, --help: Print this text and exit."
+          echo "-v, --version: Print System Dog version."
+          exit 0
+          ;;
+        -v|--version)
+          echo "$TERMDM_VERSION"
+          exit 0
+          ;;
+        '')
+          ;;
+    esac
+  shift
+done
+
+read -p "WM/DE " TERMDM_WM
+export TERMDM_WM=$TERMDM_WM
+startx
