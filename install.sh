@@ -17,6 +17,8 @@
 
 echo "Installing TermDM..."
 
+chmod +x .termdm/termdm
+
 cp dotfiles/.xinitrc $HOME/.xinitrc
 cp .termdm $HOME/.termdm
 
